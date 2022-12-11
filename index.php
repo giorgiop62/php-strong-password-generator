@@ -1,11 +1,3 @@
-<?php
-
-include './function.php'
-
-?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,23 +9,19 @@ include './function.php'
 </head>
 <body>
 
-<div class="container">
-  <h1>Password Generator</h1>
-
-  <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="get">
-  <button type="submit">Genera Password</button>
-  
-</form>
-
-
-<?php 
-
-  
-  generaPassword();
-  
-  
+<?php
+  include './func.php';
 ?>
+
+<h2>Password Generator</h2>
+
+<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+  <div class="slidecontainer">
+    <input type="range" name="lunghezzaPass" min="1" max="64" value="0">
   </div>
+<input type="submit" name="submit" value="Genera">
+</form>
+<div><?php echo $password ?></div>
 </body>
 </html>
   
